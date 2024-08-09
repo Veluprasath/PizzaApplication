@@ -1,0 +1,48 @@
+<div class="container">
+
+  <div class="card">
+    <mat-card class="cardcontainer">
+      <h2>Add Pizza Form</h2>
+      <form [formGroup]="AddForm" (ngSubmit)="addPizza()">
+
+        <mat-form-field class="field">
+          <input matInput placeholder="Enter Pizza Name" type="text" name="pizzaName" formControlName="pizzaName"
+            ngModel>
+          <mat-error *ngIf="pizzaName?.errors?.['required']">pizzaName is required.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+          <mat-label>Enter Pizza Size</mat-label>
+
+          <mat-select name="pizzaSize" type="text" formControlName="pizzaSize" ngModel>
+            <mat-option value="Small">Small</mat-option>
+            <mat-option value="Medium">Medium</mat-option>
+            <mat-option value="Large">Large</mat-option>
+
+          </mat-select>
+          <mat-error *ngIf="pizzaSize?.errors?.['required']">pizzaSize is required.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+          <input matInput placeholder="Enter Pizza Price" type="text" name="pizzaPrice" formControlName="pizzaPrice"
+            ngModel>
+          <mat-error *ngIf="pizzaPrice?.errors?.['required']">PizzaPrice is required.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+          <input matInput placeholder="Enter Pizza Quantity" type="text" name="pizzaQuantity"
+            formControlName="pizzaQuantity" ngModel>
+          <mat-error *ngIf="pizzaQuantity?.errors?.['required']">PizzaQuantity is required.</mat-error>
+        </mat-form-field>
+
+
+        <br><br>
+
+
+        <button type="submit" [disabled]="!AddForm.valid">Add Pizza</button><br><br>
+
+      </form>
+    </mat-card>
+  </div>
+
+</div>

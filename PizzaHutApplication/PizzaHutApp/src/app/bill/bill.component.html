@@ -1,0 +1,19 @@
+<div class="container" *ngFor="let pizza of listusers">
+    <mat-card *ngFor="let cont of pizza.pizzaList" class="card">
+
+
+        <mat-card-header class="header">
+            <mat-card-title><b>Pizza Name :</b>&nbsp; <i>{{cont.pizzaName}}</i></mat-card-title>
+        </mat-card-header>
+
+        <img mat-card-image src="assets\bg2.jpg" width="400px" height="300px">
+
+
+        <mat-card-content>
+            <p><b>Pizza Size :</b>&nbsp;{{cont.pizzaSize}}</p>
+            <p><b>Pizza Price :</b>&nbsp;{{cont.pizzaPrice}}</p>
+            <p><b>Pizza Quantity :</b>&nbsp;{{cont.pizzaQuantity}}</p>
+            <p><b>Total Cost :</b>&nbsp;{{calculateTotalCost(cont)}}</p>
+        </mat-card-content>
+    </mat-card>
+</div>

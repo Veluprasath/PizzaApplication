@@ -1,0 +1,16 @@
+<nav class="container">
+  <h1>Pizza<b>Hut</b></h1>
+
+  <a routerLink="Home">Home</a>
+
+  <div class="dropdown">
+    <button class="dropbtn">User</button>
+    <div class="dropdown-content">
+      <a routerLink="AddToCart">ViewPizza</a>
+      <a routerLink="ViewCart">Order</a>
+    </div>
+  </div>
+  <a routerLink="LogIn" *ngIf="!authService.isLoggedIn">LogIn</a>
+  <a (click)="logoutUser()" *ngIf="authService.isLoggedIn">LogOut</a>
+
+</nav>

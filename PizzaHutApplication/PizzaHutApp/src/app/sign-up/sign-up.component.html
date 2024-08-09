@@ -1,0 +1,44 @@
+<div class="container">
+
+  <div class="card">
+    <mat-card class="cardcontainer">
+      <h2>Signup Form</h2>
+      <form [formGroup]="signupForm" (ngSubmit)="addUserData()">
+
+        <mat-form-field class="field">
+          <input matInput placeholder="Enter Your Name" type="text" name="userName" formControlName="userName" ngModel>
+          <mat-error *ngIf="userName?.errors?.['required']">userName is required.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+          <input matInput placeholder="Enter Your EmailId" type="text" name="emailId" formControlName="emailId" ngModel>
+          <mat-error *ngIf="emailId?.errors?.['required']">emailId is required.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+          <input matInput placeholder="Enter Your Password" type="password" name="password" formControlName="password"
+            ngModel>
+          <mat-error *ngIf="password?.errors?.['required']">Password is required.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+          <input matInput placeholder="Enter Your Address" type="text" name="address" formControlName="address" ngModel>
+          <mat-error *ngIf="address?.errors?.['required']">Address is required.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+          <input matInput placeholder="Enter Your ContactNumber" type="text" name="contactNumber"
+            formControlName="contactNumber" ngModel>
+          <mat-error *ngIf="contactNumber?.errors?.['required']">contactNumber is required.</mat-error>
+        </mat-form-field>
+
+        <br><br>
+
+        <button type="submit" [disabled]="!signupForm.valid">Signup</button><br><br>
+
+      </form>
+      <span>Already have an account?<a href="LogIn"><b>Login</b></a></span>
+    </mat-card>
+  </div>
+
+</div>

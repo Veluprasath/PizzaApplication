@@ -1,0 +1,59 @@
+mat-card {
+  background-color: rgb(192, 159, 252);
+  background-position: center;
+  border-color: black;
+  border-width: 3px;
+}
+
+h2,
+span {
+  color: black;
+
+  padding-left: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+  padding-top: 5px;
+  background-image: url("src\assets\bg11.jpg");
+  height: 700px;
+  background-size: cover;
+}
+
+.cardcontainer {
+  width: 500px;
+  margin: auto;
+  margin-top: 90px;
+  margin-left: 60%;
+
+}
+
+.field {
+  width: 450px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  border-radius: 9px;
+  border-color: black;
+  color: black;
+  margin-left: 20px;
+  background-color: floralwhite;
+}
+
+button:hover {
+  background-color: rgb(10, 91, 192);
+}
+
+a {
+  text-align: center;
+  text-decoration: none;
+  color: rgb(56, 54, 54);
+}
+
+b {
+  color: blue;
+}

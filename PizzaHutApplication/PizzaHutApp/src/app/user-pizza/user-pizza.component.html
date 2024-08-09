@@ -1,0 +1,54 @@
+<div class="class">
+  <div class="getAllItem">
+
+    <mat-card class="example-card" *ngFor="let pizza of pizzaData">
+      <mat-card-header class="header">
+        <mat-card-title><b>Pizza Name :</b>&nbsp; <i>{{pizza.pizzaName}}</i></mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="assets\bg2.jpg" width="400px" height="300px">
+
+
+
+      <mat-card-content>
+        <p><b>Pizza Size :</b>&nbsp;{{pizza.pizzaSize}}</p>
+        <p><b>Pizza Price :</b>&nbsp;{{pizza.pizzaPrice}}</p>
+        <p><b>Pizza Quantity :</b>&nbsp;{{pizza.pizzaQuantity}}</p>
+      </mat-card-content>
+
+
+      <mat-card-actions>
+        <button mat-button (click)="getPizzaForEdit(pizza)">AddToCart</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+  <div class="container">
+
+    <div class="card">
+      <mat-card class="cardcontainer">
+        <h2> Add To Cart Form</h2>
+        <form [formGroup]="AddCartForm" (ngSubmit)="AddToCart()">
+
+          <mat-form-field class="field">
+            <input matInput placeholder="Enter Pizza Id" type="number" name="pizzaId" formControlName="pizzaId" ngModel>
+            <mat-error *ngIf="pizzaId?.errors?.['required']">PizzaId is required.</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="field">
+            <input matInput placeholder="Enter Pizza Quantity" type="number" name="pizzaQuantity"
+              formControlName="pizzaQuantity" ngModel>
+            <mat-error *ngIf="pizzaQuantity?.errors?.['required']">pizzaQuantity is required.</mat-error>
+          </mat-form-field>
+
+
+
+          <br><br>
+
+          <button type="submit" [disabled]="!AddCartForm.valid">Add Cart</button><br><br>
+
+
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>
